@@ -66,9 +66,9 @@
                 'user-id'=> '8',
                 'image' => '/img/night.jpg'
             ],
-        ]
+        ];
 
-        return $ads;
+        return array('ads' => $ads);
     }
     extract(pageController());
 ?>
@@ -88,21 +88,27 @@
     </div>
 
     <section id="items">
-        <?php foreach ($ads as $ad): ?>
-            <div class="col s12 m3">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="<?= $ad['image']; ?>" >
-                        <span class="card-title">Item <?= $ad['id']; ?></span>
+        <?php foreach ($ads as $index=>$ad): ?>
+            <?php if ($index % 4 == 0): ?>
+                <div class="row">
+            <?php endif ?>    
+                    <div class="col s12 m3">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="<?= $ad['image']; ?>" >
+                                <span class="card-title">Item <?= $ad['id']; ?></span>
+                            </div>
+                            <div class="card-content">
+                                <p><?= $ad['description']; ?></p>
+                            </div>
+                            <div class="card-action">
+                                <a href=""><button class="btn">Details Page</button></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <p><?= $ad['description']; ?></p>
-                    </div>
-                    <div class="card-action">
-                        <a href=""><button class="btn">Details Page</button></a>
-                    </div>
+            <?php if ($index %4 == 3): ?>
                 </div>
-            </div>
+            <?php endif ?>    
         <?php endforeach; ?>
     </section>
     <?php require 'temp-foot.php'; ?>
