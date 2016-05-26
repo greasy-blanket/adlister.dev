@@ -1,15 +1,22 @@
 <!--Page for user account home-->
 <?php
 
-function pageController($dbc)
+function pageController()
 {
+    $data = [];
+    $ads = [];
+
+    $data['name'] = 'Jane';
+    $data['email'] = 'jane1981@hotmail.com';
+
+    $ads = ['Sony Playstation', 'Cat With Laser Eyes', 'Charlie Brown Shirt'];
 
     return [
         'data' => $data,
         'ads'  => $ads,
         ];
 }
-//extract(pageController($dbc));
+extract(pageController());
 
 ?>
 <html>

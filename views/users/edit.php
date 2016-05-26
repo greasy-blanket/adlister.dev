@@ -1,46 +1,70 @@
-<div class="container">
+<?php
 
-	<section id="login">
+function pageController()
+{
+    $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',]
+    return $user;
+}
+extract(pageController());
 
-		<div class="row">
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adlister | Account<title>
+      <!-- require head -->
 
-			<h1 class="section-title">Edit Account</h1>
+</head>
+<body>
+    <!-- require navbar -->
 
-			<div class="col-md-6 col-md-offset-3">
+    <div class="container">
 
-				<p>Please fill out the information below so we can update your account.</p>
-				<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
-	                <div class="alert alert-danger">
-	                    <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
-	                </div>
-	                <?php unset($_SESSION['ERROR_MESSAGE']); ?>
-	            <?php endif; ?>
-	            <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
-	                <div class="alert alert-success">
-	                    <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
-	                </div>
-	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
-	            <?php endif; ?>
+    	<section id="login">
 
-				<form method="POST" action="" data-validation data-required-message="This field is required">
+    		<div class="row">
 
-					<div class="form-group">
-					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" value="<?= $user->name; ?>" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<?= $user->email; ?>" data-required>
-					</div>
-					<div class="form-group">
-					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $user->username; ?>" data-required>
-					</div>
-					<button type="submit" class="btn btn-primary">Update Account</button>
+    			<h1 class="section-title">Edit Account</h1>
 
-				</form>
+    			<div class="col-md-6 col-md-offset-3">
 
-			</div>
+    				<p>Please fill out the information below so we can update your account.</p>
+    				<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
+    	                <div class="alert alert-danger">
+    	                    <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
+    	                </div>
+    	                <?php unset($_SESSION['ERROR_MESSAGE']); ?>
+    	            <?php endif; ?>
 
-		</div>
+    	            <?php if (isset($_SESSION['SUCCESS_MESSAGE'])) : ?>
+    	                <div class="alert alert-success">
+    	                    <p class="success"><?= $_SESSION['SUCCESS_MESSAGE']; ?></p>
+    	                </div>
+    	            <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
+    	      <?php endif; ?>
 
-	</section>
+    				<form method="POST" action="" data-validation data-required-message="This field is required">
 
-</div>
+    					<div class="form-group">
+    					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" value="<?= $user['name']; ?>" data-required>
+    					</div>
+    					<div class="form-group">
+    					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<?= $user['email']; ?>" data-required>
+    					</div>
+    					<div class="form-group">
+    					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $user['username']; ?>" data-required>
+    					</div>
+    					<button type="submit" class="btn btn-primary">Update Account</button>
+
+    				</form>
+
+    			</div>
+
+    		</div>
+
+    	</section>
+
+    </div>
+    <!-- require footer -->
+</body>
+</html>
