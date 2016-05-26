@@ -1,6 +1,15 @@
 <!--Page for user account home-->
 <?php
 
+function pageController($dbc)
+{
+
+    return [
+        'data' => $data,
+        'ads'  => $ads,
+        ];
+}
+//extract(pageController($dbc));
 
 ?>
 <html>
@@ -17,11 +26,11 @@
 
             <div class="info left-align">
                 <div class="name">
-                    <p>Name: <?= //$userinfo['name'] ?></p>
+                    <p>Name: <?= $userinfo['name'] ?></p>
                 </div>
 
                 <div class="email">
-                    <p>Email: <?= //$userinfo['email'] ?></p>
+                    <p>Email: <?= $userinfo['email'] ?></p>
                 </div>
             </div>
             <button class="edit-profile btn">Edit Profile</button>
@@ -37,7 +46,7 @@
                         <p><?= $adTitle ?></p>
                     </div>
 
-                <?php endforeach ?>
+                <?php endforeach; ?>
 
             </div>
             <button class="create-ad btn">Create Ad</button>
