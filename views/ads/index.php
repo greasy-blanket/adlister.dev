@@ -66,9 +66,57 @@
                 'user-id'=> '8',
                 'image' => '/img/night.jpg'
             ],
-        ]
+            [
+                'id' => '9',
+                'name' => 'chair',
+                'price' => '$14.99',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'user-id'=> '9',
+                'image' => '/img/night.jpg'   
+            ],
+            [
+                'id' => '10',
+                'name' => 'table',
+                'price' => '$14.99',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'user-id'=> '10',
+                'image' => '/img/night.jpg'
+            ],
+            [
+                'id' => '11',
+                'name' => 'pencil',
+                'price' => '$14.99',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'user-id'=> '11',
+                'image' => '/img/night.jpg'
+            ],
+            [
+                'id' => '12',
+                'name' => 'pen',
+                'price' => '$14.99',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'user-id'=> '12',
+                'image' => '/img/night.jpg'
+            ],
+            [
+                'id' => '13',
+                'name' => 'cellphone',
+                'price' => '$14.99',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'user-id'=> '13',
+                'image' => '/img/night.jpg'
+            ],
+            [
+                'id' => '14',
+                'name' => 'mug',
+                'price' => '$14.99',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                'user-id'=> '14',
+                'image' => '/img/night.jpg'
+            ],
+        ];
 
-        return $ads[];
+        return array('ads' => $ads);
     }
     extract(pageController());
 ?>
@@ -88,22 +136,28 @@
     </div>
 
     <section id="items">
-        <div class="row">
-            <div class="col s12 m3">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="/img/night.jpg">
-                        <span class="card-title">Item 1</span>
+        <?php foreach ($ads as $index=>$ad): ?>
+            <?php if ($index % 4 == 0): ?>
+                <div class="row">
+            <?php endif ?>    
+                    <div class="col s12 m3">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="<?= $ad['image']; ?>" >
+                                <span class="card-title">Item <?= $ad['name']; ?></span>
+                            </div>
+                            <div class="card-content">
+                                <p><?= $ad['description']; ?></p>
+                            </div>
+                            <div class="card-action">
+                                <a href=""><button class="btn">Details Page</button></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href=""><button class="btn">Details Page</button></a>
-                    </div>
+            <?php if ($index % 4 == 3): ?>
                 </div>
-            </div>
-        </div>
+            <?php endif ?>    
+        <?php endforeach; ?>
     </section>
     <?php require 'temp-foot.php'; ?>
 
@@ -113,4 +167,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </body>
 </html>
-
