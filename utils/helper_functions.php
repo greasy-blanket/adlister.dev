@@ -30,3 +30,17 @@ function saveUploadedImage($input_name)
 // From Kristen: logic from /views/ads/show.php
 $item = ['title' => 'Jet', 'owner' => 'Sally', 'description' => 'lorem ipsum delor and other really neat things.', 'email' => 'sally89@gmail.com', 'address' => '1324 S. Lorem, San Antonio, Texas, 77777'];
     return $item;
+
+// From Kristen: logic from /views/users/account.php
+$data = [];
+    $ads = [];
+
+    $data['name'] = 'Jane';
+    $data['email'] = 'jane1981@hotmail.com';
+
+    $ads = ['Sony Playstation', 'Cat With Laser Eyes', 'Charlie Brown Shirt'];
+
+    return [
+        'data' => $data,
+        'ads'  => $ads,
+        ];
