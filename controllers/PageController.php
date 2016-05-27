@@ -23,9 +23,52 @@ function pageController()
         $request = $_SERVER['REQUEST_URI'];
     }
 
-    // switch that will run functions and setup variables dependent on what route was accessed
-    switch ($request) {
 
+    var_dump($request);
+    // switch that will run functions and setup variables dependent on what route was accessed
+
+    //############### Make Title a $title key; ###################
+
+    switch ($request) {
+        case ('/'):
+            $main_view = '../views/home.php';
+            break;
+
+        case ('/user/account'):
+            $main_view = '../views/user/account.php';
+            break;
+
+        case ('/user/edit'):
+            $main_view = '../views/user/edit.php';
+            break;
+
+        case ('/user/login'):
+            $main_view = '../views/user/login.php';
+            break;
+
+        case ('/user/signup'):
+            $main_view = '../views/user/signup.php';
+            break;
+
+        case '/ads':
+            $main_view = '../ads/index.php';
+
+            break;
+
+        case '/ads/create':
+            $main_view = '../views/ads/create.php';
+
+            break;
+        case '/ads/edit':
+            $main_view = '../views/ads/edit.php';
+            //$data['ads'] = getAllAdsHelperFunctionVerboseName();
+            //$data['somethingelse'] = myOtherSuperLongHelperFunctionName();
+            break;
+
+        case '/ads/show':
+            $main_view = '../views/ads/show.php';
+
+            break;
 
         default:    // displays 404 if route not specified above
             $main_view = '../views/404.php';
