@@ -67,3 +67,9 @@ $data = [];
 // From Kristen: logic from /views/users/edit.php
 $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
     return $user;
+
+// This shows all items from the database in the index.php file
+function fetchAllItems()
+{
+    // 
+}
