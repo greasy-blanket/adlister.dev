@@ -27,7 +27,7 @@ class Ad extends Model
         $stmt = self::$dbc->prepare($query); 
         $stmt->execute(); 
 
-        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $results;
     }
