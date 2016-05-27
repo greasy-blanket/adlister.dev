@@ -70,12 +70,6 @@ $data = [];
 $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
     return $user;
 
-// This shows the most recent three items in the database in the /views/home.php file
-function fetchThreeRecentItems()
-{
-
-}
-
 function createNewUser()
 {
 
