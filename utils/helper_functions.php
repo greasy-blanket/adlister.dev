@@ -26,3 +26,7 @@ function saveUploadedImage($input_name)
     }
     return null;
 }
+
+// From Kristen: logic from /views/ads/show.php
+$item = ['title' => 'Jet', 'owner' => 'Sally', 'description' => 'lorem ipsum delor and other really neat things.', 'email' => 'sally89@gmail.com', 'address' => '1324 S. Lorem, San Antonio, Texas, 77777'];
+    return $item;
