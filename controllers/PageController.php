@@ -51,7 +51,7 @@ function pageController()
             break;
 
         case '/ads':
-            $main_view = '../';
+            $main_view = '../ads/index.php';
 
             break;
 
@@ -63,11 +63,6 @@ function pageController()
             $main_view = '../views/ads/edit.php';
             //$data['ads'] = getAllAdsHelperFunctionVerboseName();
             //$data['somethingelse'] = myOtherSuperLongHelperFunctionName();
-            break;
-
-        case '/ads/index':
-            $main_view = '../views/ads/index.php';
-
             break;
 
         case '/ads/show':
