@@ -35,19 +35,19 @@ function pageController()
             break;
 
         case ('/user/account'):
-            $main_view = '../views/user/account.php';
+            $main_view = '../views/users/account.php';
             break;
 
         case ('/user/edit'):
-            $main_view = '../views/user/edit.php';
+            $main_view = '../views/users/edit.php';
             break;
 
         case ('/user/login'):
-            $main_view = '../views/user/login.php';
+            $main_view = '../views/users/login.php';
             break;
 
         case ('/user/signup'):
-            $main_view = '../views/user/signup.php';
+            $main_view = '../views/users/signup.php';
             break;
 
         case '/ads':
