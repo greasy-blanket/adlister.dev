@@ -43,45 +43,55 @@ function saveUploadedImage($input_name)
 }
 
 // USER LOGIN HELPERS ##############
-function isFormCompete()
+function logInUser()
 {
-    $bool = false;
+    if (Input::has('username') && Input::has('password')){
+        $username = Input::get('username');
+        $password = Input::get('password');
+        
+        if(Auth::attempt($username,$password)){
+            header('Location: http://adlister.dev/user/account');
+        }
+    }
+}
+    
 
-    if(isset($_REQUEST)) {
-// compair passwords 1 and 2
-// check db for email
-    // throw exceptions where needed
-    return bool;
+
+//     $bool = false;
+
+//     if(isset($_REQUEST)) {
+// // compair passwords 1 and 2
+// // check db for email
+//     // throw exceptions where needed
+//     return bool;
 
 // format name to be full-name
 
 //Set: name, email, passwd,
 // save();
 // redirect to user/account;
-    }
-}
 
 // From Kristen: logic from /views/ads/show.php
 $item = ['title' => 'Jet', 'owner' => 'Sally', 'description' => 'lorem ipsum delor and other really neat things.', 'email' => 'sally89@gmail.com', 'address' => '1324 S. Lorem, San Antonio, Texas, 77777'];
     return $item;
 
 // From Kristen: logic from /views/users/account.php
-$data = [];
-    $ads = [];
+// $data = [];
+//     $ads = [];
 
-    $data['name'] = 'Jane';
-    $data['email'] = 'jane1981@hotmail.com';
+//     $data['name'] = 'Jane';
+//     $data['email'] = 'jane1981@hotmail.com';
 
-    $ads = ['Sony Playstation', 'Cat With Laser Eyes', 'Charlie Brown Shirt'];
+//     $ads = ['Sony Playstation', 'Cat With Laser Eyes', 'Charlie Brown Shirt'];
 
-    return [
-        'data' => $data,
-        'ads'  => $ads,
-        ];
+//     return [
+//         'data' => $data,
+//         'ads'  => $ads,
+//         ];
 
-// From Kristen: logic from /views/users/edit.php
-$user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
-    return $user;
+// // From Kristen: logic from /views/users/edit.php
+// $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
+//     return $user;
 
 
 // This shows all items from the database in the index.php file
@@ -96,7 +106,8 @@ function createNewUser()
 $errors = [];
 
 ($_POST && !Input::has('name')) ? array_push($errors, 'Name empty') : null;
-    if (Input::has('name') && Input::has('username')&& Input::has('password') && Input::has('confirmPassword') && Input::has('email')) {
+
+    if (Input::has('name') && Input::has('username') && Input::has('password') && Input::has('confirmPassword') && Input::has('email')) {
         $user = new User;
         try{
             $user->name = Input::get('name');
