@@ -44,3 +44,7 @@ $data = [];
         'data' => $data,
         'ads'  => $ads,
         ];
+
+// From Kristen: logic from /views/users/edit.php
+$user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',]
+    return $user;
