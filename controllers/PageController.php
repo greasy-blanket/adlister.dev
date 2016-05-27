@@ -47,22 +47,7 @@ function pageController()
 
         case ('/user/signup'):
             $main_view = '../views/users/signup.php';
-
-            if(isset($_REQUEST)) {
-            // compair passwords 1 and 2
-            // check db for email
-                // throw exceptions where needed
-            // format name to be full-name
-
-            //Set: name, email, passwd,
-            // save();
-            // redirect to user/account;
-            }
-
-
-
-
-
+            createNewUser();
             break;
 
         case '/ads':
