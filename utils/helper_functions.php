@@ -48,32 +48,15 @@ function logInUser()
     if (Input::has('username') && Input::has('password')){
         $username = Input::get('username');
         $password = Input::get('password');
-        
         if(Auth::attempt($username,$password)){
             header('Location: http://adlister.dev/user/account');
         }
     }
 }
     
-
-
-//     $bool = false;
-
-//     if(isset($_REQUEST)) {
-// // compair passwords 1 and 2
-// // check db for email
-//     // throw exceptions where needed
-//     return bool;
-
-// format name to be full-name
-
-//Set: name, email, passwd,
-// save();
-// redirect to user/account;
-
 // From Kristen: logic from /views/ads/show.php
-$item = ['title' => 'Jet', 'owner' => 'Sally', 'description' => 'lorem ipsum delor and other really neat things.', 'email' => 'sally89@gmail.com', 'address' => '1324 S. Lorem, San Antonio, Texas, 77777'];
-    return $item;
+// $item = ['title' => 'Jet', 'owner' => 'Sally', 'description' => 'lorem ipsum delor and other really neat things.', 'email' => 'sally89@gmail.com', 'address' => '1324 S. Lorem, San Antonio, Texas, 77777'];
+    // return $item;
 
 // From Kristen: logic from /views/users/account.php
 // $data = [];
