@@ -32,7 +32,8 @@ class Auth
 		// checks password submitted against hashed password
 		if (password_verify($password, $user->password))
 		{
-
+// its not checking the session its creating the variables
+			
 			// sets session variables used for logged in user
 			$_SESSION['IS_LOGGED_IN'] = $user->username;
 			$_SESSION['LOGGED_IN_ID'] = $user->id;

@@ -43,6 +43,7 @@ function pageController()
 
         case ('/user/login'):
             $main_view = '../views/users/login.php';
+            logInUser();
             break;
 
         case ('/user/signup'):
