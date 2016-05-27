@@ -69,6 +69,12 @@ $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jan
     return $user;
 
 
+// This shows all items from the database in the index.php file
+function fetchAllItems()
+{
+    //
+
+
 function createNewUser()
 {
 
@@ -81,7 +87,7 @@ $errors = [];
             $user->name = Input::get('name');
         }catch(Exception $e){
             $errors[] = $e->getMessage();
-        } 
+        }
 
         try{
              $user->username = Input::get('username');
@@ -97,17 +103,18 @@ $errors = [];
               $errors[] = $e->getMessage();
           }
         }
-        
-        try{    
+
+        try{
             $user->email = Input::get('email');
         }catch(Exception $e){
             $errors[] = $e->getMessage();
         }
-        
+
         if(empty($errors)) {
             $user->save();
             header('location:http://adlister.dev/user/login');
             die;
         }
     }
+
 }
