@@ -1,67 +1,32 @@
-<!--Page for user account home-->
-<?php
+<div class="container">
+    <div class="user-info section center-align">
+        <h2>User Info</h2>
 
-function pageController()
-{
-    $data = [];
-    $ads = [];
+        <div class="info left-align">
+            <div class="name">
+                <p>Name: <?= $userinfo['name'] ?></p>
+            </div>
 
-    $data['name'] = 'Jane';
-    $data['email'] = 'jane1981@hotmail.com';
+            <div class="email">
+                <p>Email: <?= $userinfo['email'] ?></p>
+            </div>
+        </div>
+        <button class="edit-profile btn">Edit Profile</button>
+    </div><!-- End of user-info -->
 
-    $ads = ['Sony Playstation', 'Cat With Laser Eyes', 'Charlie Brown Shirt'];
+    <div class="user-ads section center-align">
+        <h2>Your Ads</h2>
 
-    return [
-        'data' => $data,
-        'ads'  => $ads,
-        ];
-}
-extract(pageController());
+        <div class="info">
+            <?php foreach($ads as $adTitle): ?>
 
-?>
-<html>
-<head>
-  <title>account</title>
-  <?php //require 'header.php'; ?>
-
-</head>
-<body>
-    <?php //require 'nav-bar'; ?>
-    <div class="container">
-        <div class="user-info section center-align">
-            <h2>User Info</h2>
-
-            <div class="info left-align">
-                <div class="name">
-                    <p>Name: <?= $userinfo['name'] ?></p>
+                <div class="ad-title">
+                    <p><?= $adTitle ?></p>
                 </div>
 
-                <div class="email">
-                    <p>Email: <?= $userinfo['email'] ?></p>
-                </div>
-            </div>
-            <button class="edit-profile btn">Edit Profile</button>
-        </div><!-- End of user-info -->
+            <?php endforeach; ?>
+        </div>
+        <button class="create-ad btn">Create Ad</button>
+    </div><!-- End of user-ads -->
+</div><!-- End of container -->
 
-        <div class="user-ads section center-align">
-            <h2>Your Ads</h2>
-
-            <div class="info">
-                <?php foreach($ads as $adTitle): ?>
-
-                    <div class="ad-title">
-                        <p><?= $adTitle ?></p>
-                    </div>
-
-                <?php endforeach; ?>
-
-            </div>
-            <button class="create-ad btn">Create Ad</button>
-        </div><!-- End of user-ads -->
-    </div><!-- End of container -->
-
-    <?php //require 'footer.php'; ?>
-
-    <?php //require 'js-files'; ?>
-</body>
-</html>
