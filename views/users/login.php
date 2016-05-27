@@ -19,12 +19,12 @@
             <form method="POST" action="" data-validation data-required-message="This field is required">
               <div class="row">
                 <div class="input-field">
-                  <input placeholder="Username" id="userName" type="text" class="validate" data-required>
+                  <input placeholder="Username" name="username" id="userName" type="text" class="validate" data-required>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field">
-                  <input placeholder="Password" id="password" type="password" class="validate" data-required>
+                  <input placeholder="Password" name="password" id="password" type="password" class="validate" data-required>
                 </div>
               </div>
               <div class="row">
