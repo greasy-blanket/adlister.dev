@@ -15,14 +15,15 @@ function saveUploadedImage($input_name)
         if(!$_FILES[$input_name]['error'])
         {
             $tempFile = $_FILES[$input_name]['tmp_name'];
-            $newName = substr($tempFile, 4);
-            $extension = pathinfo($_FILES[$input_name]['name'], PATHINFO_EXTENSION);
+            $newName = $_FILES[$input_name]['name'];
+            $extension = strtolower(pathinfo($_FILES[$input_name]['name'], PATHINFO_EXTENSION));
             // Validate Size and Extension
-            if( $_FILES[$input_name]['size'] > (1024000000))
+            if( $_FILES[$input_name]['size'] > 1024000000)
             {
                 $valid = false;
             }
             // only allows certain file extensions
+            
             if( $extension != 'jpg' && $extension != 'jpeg' && $extension != 'png' && $extension != 'gif')
             {
                 $valid  = false;
@@ -30,7 +31,7 @@ function saveUploadedImage($input_name)
             // If Image file makes it to this point, send file to this directory
             if($valid)
             {
-                $image_url = '/img/uploads' . $newName . '.' . $extension;
+                $image_url = '/img/uploads' . $newName;
                 move_uploaded_file($tempFile, __DIR__ .'/../public' . $image_url);
                 return $image_url;
             }
@@ -139,6 +140,20 @@ $errors = [];
             header('location:http://adlister.dev/user/login');
             die;
         }
+    }
+}
+
+function createNewAd()
+{
+
+    if (Input::has('name')) {
+        $ad = new Ad();
+        $ad->user_id = Auth::user()->id;
+        $ad->name = Input::get('name');
+        $ad->description = Input::get('description');
+        $ad->price = Input::get('price');
+        $ad->img_url = saveUploadedImage('img');
+        $ad->save();
     }
 }
 

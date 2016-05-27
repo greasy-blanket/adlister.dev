@@ -71,8 +71,9 @@ function pageController()
         case '/ads/create':
             $data['title'] = 'Create';
             $main_view = '../views/ads/create.php';
-
+            createNewAd();
             break;
+            
         case '/ads/edit':
             $data['title'] = 'Adlist Edit';
             $main_view = '../views/ads/edit.php';
