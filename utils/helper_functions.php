@@ -1,4 +1,6 @@
 <?php
+
+ require_once __DIR__ . '/../models/Ad.php';
 // List of helper functions used throughout the application.
 // Primarily used within the PageController function.
 
@@ -67,23 +69,6 @@ $data = [];
 // From Kristen: logic from /views/users/edit.php
 $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
     return $user;
-
-
-// This shows all items from the database in the index.php file
-function fetchAllItems()
-{
-    self::dbConnect();
-
-    $allData = self::$dbc->prepare('SELECT * FROM users');
-    $result = $allData->execute();
-    $result = $allData->fetchAll(PDO::FETCH_ASSOC);
-
-    $instance = null;
-    if ($result) {
-        $instance = new static($result);
-    }
-    return $instance;
-}
 
 function createNewUser()
 {
