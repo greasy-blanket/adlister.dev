@@ -22,12 +22,12 @@
 		        <form class="col s12" action="http://adlister.dev/user/signup" method="POST">
 		          <div class="row">
 		            <div class="input-field">
-		              <input placeholder="Full Name" name='name' id="name" type="text" class="validate">
+		              <input placeholder="Full Name" name="name" id="name" type="text" class="validate"  data-required>
 		            </div>
 		          </div>
 		          <div class="row">
 		            <div class="input-field">
-		              <input placeholder="Username" name='username' id="username" type="text" class="validate">
+		              <input placeholder="Username" id="username" name="username" type="text" class="validate"  data-required>
 		            </div>
 		          </div>   
 		          <div class="row">

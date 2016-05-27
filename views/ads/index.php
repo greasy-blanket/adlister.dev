@@ -1,10 +1,14 @@
+<?php
+    $ads = Ad::all();
+?>
+
 <div class="container">
     <div>
         <h1 class="center-align">Items Page</h1>
     </div>
 
     <section id="items">
-        <?php foreach ($ads as $index=>$ad): ?>
+        <?php foreach ($ads->attributes as $index => $ad): ?>
             <?php if ($index % 4 == 0): ?>
                 <div class="row">
             <?php endif ?>    
@@ -12,7 +16,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <img src="<?= $ad['img_url']; ?>" >
-                                <span class="card-title">Item <?= $ad['name']; ?></span>
+                                <span class="card-title">Item <?= $ad['name'] ?></span>
                             </div>
                             <div class="card-content">
                                 <p><?= $ad['description']; ?></p>

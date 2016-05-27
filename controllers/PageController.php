@@ -47,6 +47,7 @@ function pageController()
         case ('/user/login'):
             $data['title'] = 'Login';
             $main_view = '../views/users/login.php';
+            logInUser();
             break;
 
         case ('/user/signup'):
