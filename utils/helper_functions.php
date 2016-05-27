@@ -27,6 +27,25 @@ function saveUploadedImage($input_name)
     return null;
 }
 
+// USER LOGIN HELPERS ##############
+function isFormCompete()
+{
+    $bool = false;
+
+    if(isset($_REQUEST)) {
+// compair passwords 1 and 2
+// check db for email
+    // throw exceptions where needed
+    return bool;
+
+// format name to be full-name
+
+//Set: name, email, passwd,
+// save();
+// redirect to user/account;
+    }
+}
+
 // From Kristen: logic from /views/ads/show.php
 $item = ['title' => 'Jet', 'owner' => 'Sally', 'description' => 'lorem ipsum delor and other really neat things.', 'email' => 'sally89@gmail.com', 'address' => '1324 S. Lorem, San Antonio, Texas, 77777'];
     return $item;
@@ -46,5 +65,5 @@ $data = [];
         ];
 
 // From Kristen: logic from /views/users/edit.php
-$user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',]
+$user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
     return $user;
