@@ -45,6 +45,7 @@ function saveUploadedImage($input_name)
 }
 
 // USER LOGIN HELPERS ##############
+
 function logInUser()
 {
     if (Input::has('username') && Input::has('password')){
@@ -55,7 +56,8 @@ function logInUser()
         }
     }
 }
-    
+
+
 // From Kristen: logic from /views/ads/show.php
 // $item = ['title' => 'Jet', 'owner' => 'Sally', 'description' => 'lorem ipsum delor and other really neat things.', 'email' => 'sally89@gmail.com', 'address' => '1324 S. Lorem, San Antonio, Texas, 77777'];
     // return $item;
@@ -68,6 +70,24 @@ function logInUser()
 //     $data['email'] = 'jane1981@hotmail.com';
 
 //     $ads = ['Sony Playstation', 'Cat With Laser Eyes', 'Charlie Brown Shirt'];
+
+// From Kristen: logic from /views/users/edit.php
+$user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
+    return $user;
+
+
+// This shows all items from the database in the index.php file
+function fetchAllItems()
+{
+    //
+}
+
+function userLogout()
+{
+    if(logInUser()) {
+        Auth::logout();
+    }
+}
 
 //     return [
 //         'data' => $data,
