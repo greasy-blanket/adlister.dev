@@ -22,12 +22,12 @@
 		        <form class="col s12" method="POST" action="" data-validation data-required-message="This field is required">
 		          <div class="row">
 		            <div class="input-field">
-		              <input placeholder="First Name" id="first_name" type="text" class="validate"  data-required>
+		              <input placeholder="Full Name" id="name" type="text" class="validate"  data-required>
 		            </div>
 		          </div>  
 		          <div class="row">  
 		            <div class="input-field">
-		              <input placeholder="Last Name" id="last_name" type="text" class="validate"  data-required>
+		              <input placeholder="Username" id="username" type="text" class="validate"  data-required>
 		            </div>
 		          </div>
 		          <div class="row">
