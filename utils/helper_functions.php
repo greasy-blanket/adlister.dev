@@ -28,23 +28,23 @@ function saveUploadedImage($input_name)
 }
 
 // USER LOGIN HELPERS ##############
-function isFormCompete()
-{
-    $bool = false;
+// function isFormCompete()
+// {
+//     $bool = false;
 
-    if(isset($_REQUEST)) {
-// compair passwords 1 and 2
-// check db for email
-    // throw exceptions where needed
-    return bool;
+//     if(isset($_REQUEST)) {
+// // compair passwords 1 and 2
+// // check db for email
+//     // throw exceptions where needed
+//     return bool;
 
-// format name to be full-name
+// // format name to be full-name
 
-//Set: name, email, passwd,
-// save();
-// redirect to user/account;
-    }
-}
+// //Set: name, email, passwd,
+// // save();
+// // redirect to user/account;
+//     }
+// }
 
 // From Kristen: logic from /views/ads/show.php
 $item = ['title' => 'Jet', 'owner' => 'Sally', 'description' => 'lorem ipsum delor and other really neat things.', 'email' => 'sally89@gmail.com', 'address' => '1324 S. Lorem, San Antonio, Texas, 77777'];
@@ -73,7 +73,14 @@ $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jan
 function fetchAllItems()
 {
     //
+}
 
+function userLogout()
+{
+    if(logInUser()) {
+        Auth::logout();
+    }
+}
 
 function createNewUser()
 {

@@ -30,47 +30,63 @@ function pageController()
 
     switch ($request) {
         case ('/'):
+            $data['title'] = 'Adlister';
             $main_view = '../views/home.php';
             break;
 
         case ('/user/account'):
+            $data['title'] = 'Account';
             $main_view = '../views/users/account.php';
             break;
 
         case ('/user/edit'):
+            $data['title'] = 'Adlist Edit';
             $main_view = '../views/users/edit.php';
             break;
 
         case ('/user/login'):
+            $data['title'] = 'Login';
             $main_view = '../views/users/login.php';
             break;
 
         case ('/user/signup'):
+            $data['title'] = 'Sign Up';
             $main_view = '../views/users/signup.php';
             createNewUser();
             break;
 
+        case ('/logout'):
+            $data['title'] = 'LogOut';
+            $main_view = '../views/users/logout.php';
+            userLogout();
+            break;
+
         case '/ads':
+            $data['title'] = 'Adlister | Ads';
             $main_view = '../views/ads/index.php';
 
             break;
 
         case '/ads/create':
+            $data['title'] = 'Create';
             $main_view = '../views/ads/create.php';
 
             break;
         case '/ads/edit':
+            $data['title'] = 'Adlist Edit';
             $main_view = '../views/ads/edit.php';
             //$data['ads'] = getAllAdsHelperFunctionVerboseName();
             //$data['somethingelse'] = myOtherSuperLongHelperFunctionName();
             break;
 
         case '/ads/show':
+                    $data['title'] = 'Adlist | Info';
             $main_view = '../views/ads/show.php';
 
             break;
 
-        default:    // displays 404 if route not specified above
+        default:
+            $data['title'] = 'Adlist 404';    // displays 404 if route not specified above
             $main_view = '../views/404.php';
             break;
     }
