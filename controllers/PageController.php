@@ -58,8 +58,9 @@ function pageController()
 
         case '/ads/create':
             $main_view = '../views/ads/create.php';
-
+            createNewAd();
             break;
+            
         case '/ads/edit':
             $main_view = '../views/ads/edit.php';
             //$data['ads'] = getAllAdsHelperFunctionVerboseName();
