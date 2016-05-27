@@ -51,7 +51,7 @@ function pageController()
             break;
 
         case '/ads':
-            $main_view = '../ads/index.php';
+            $main_view = '../views/ads/index.php';
 
             break;
 
