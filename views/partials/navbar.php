@@ -9,7 +9,7 @@
             <li><a href="/user/account">Account</a></li>
             <li><a href="/user/login">Login</a></li>
     <!--unsure where the logout button takes the user  -->
-            <li><a href="#">Log Out</a></li>
+            <li><a href="/logout">Log Out</a></li>
             <li><a href="/user/signup">Sign Up</a></li>
             <li><a href="/ads/create">Post New Add</a></li>
         </ul>
