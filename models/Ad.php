@@ -18,4 +18,17 @@ class Ad extends Model
 
         return $results;
     }
+
+    public static function findMostRecentAds()
+    {
+        self::dbConnect();
+        
+        $query = 'SELECT * FROM ads ORDER BY id DESC LIMIT 3'; 
+        $stmt = self::$dbc->prepare($query); 
+        $stmt->execute(); 
+
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $results;
+    }
 }
