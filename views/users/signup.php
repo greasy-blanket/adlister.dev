@@ -19,36 +19,35 @@
 	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
 	            <?php endif; ?>
 
-		        <form class="col s12" method="POST" action="" data-validation data-required-message="This field is required">
+		        <form class="col s12" action="http://adlister.dev/user/signup" method="POST">
 		          <div class="row">
 		            <div class="input-field">
 		              <input placeholder="Full Name" id="name" type="text" class="validate"  data-required>
 		            </div>
-		          </div>  
-		          <div class="row">  
+		          </div>
+		          <div class="row">
 		            <div class="input-field">
 		              <input placeholder="Username" id="username" type="text" class="validate"  data-required>
 		            </div>
-		          </div>
+		          </div>   
 		          <div class="row">
 		            <div class="input-field">
-		              <input placeholder="Password" id="password" type="password" class="validate"  data-required>
+		              <input placeholder="Password" name='password' id="password" type="password" class="validate">
 		            </div>
 		          </div>
 		          <div class="row">
 		            <div class="input-field">
-		              <input placeholder="Confirm Password" id="confirmPassword" type="password" class="validate"  data-required>
+		              <input placeholder="Confirm Password" name='confirmPassword' id="confirmPassword" type="password" class="validate">
 		            </div>
 		          </div>
 		          <div class="row">
 		            <div class="input-field">
-		              <input placeholder="Email" id="email" type="email" class="validate"  data-required>
+		              <input placeholder="Email" name='email' id="email" type="email" class="validate">
 		            </div>
 		          </div>
 		          <div class="row">
 		            <div class="col s12 m8 l4 offset-m2 offset-l4">
 		              <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
-                	  <button href="/login" class="btn btn-success">Go To Login</button>
 		            </div>
 		          </div>
 		        </form>
