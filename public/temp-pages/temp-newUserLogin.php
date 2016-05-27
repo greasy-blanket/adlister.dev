@@ -7,7 +7,6 @@ require('../../models/User.php');
 $errors = [];
 
 ($_POST && !Input::has('name')) ? array_push($errors, 'Name empty') : null;
-echo 'first one';
 var_dump($_POST);
     if (Input::has('name') && Input::has('username')&& Input::has('password') && Input::has('confirmPassword') && Input::has('email')) {
         $user = new User;
@@ -43,7 +42,6 @@ var_dump($_POST);
             header('location:adlister.dev/users/login.php');
             die;
         }
-        var_dump($errors);
     }    
 ?>
 
@@ -63,7 +61,7 @@ var_dump($_POST);
 <center>Creating A New User</center>    
 <div class="row">
     <div class="col s12 m6 l4 offset-m3 offset-l4">
-        <form class="col s12" action="temp-newUserLogin.php" method="POST">
+        <form class="col s12" action="adlister.dev/users/login.php" method="POST">
           <div class="row">
             <div class="input-field">
               <input placeholder="Full Name" name='name' id="name" type="text" class="validate">

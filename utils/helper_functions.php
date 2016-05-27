@@ -68,8 +68,53 @@ $data = [];
 $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
     return $user;
 
+
 // This shows all items from the database in the index.php file
 function fetchAllItems()
 {
-    // 
+    //
+
+
+function createNewUser()
+{
+
+$errors = [];
+
+($_POST && !Input::has('name')) ? array_push($errors, 'Name empty') : null;
+    if (Input::has('name') && Input::has('username')&& Input::has('password') && Input::has('confirmPassword') && Input::has('email')) {
+        $user = new User;
+        try{
+            $user->name = Input::get('name');
+        }catch(Exception $e){
+            $errors[] = $e->getMessage();
+        }
+
+        try{
+             $user->username = Input::get('username');
+        }catch(Exception $e){
+            $errors[] = $e->getMessage();
+        }
+        if ($user->confirmPassword !== $user->password) {
+          $errors[] = 'Your password and password confirmation do not match, try again';
+        } else {
+          try{
+              $user->password = Input::get('password');
+          }catch(Exception $e){
+              $errors[] = $e->getMessage();
+          }
+        }
+
+        try{
+            $user->email = Input::get('email');
+        }catch(Exception $e){
+            $errors[] = $e->getMessage();
+        }
+
+        if(empty($errors)) {
+            $user->save();
+            header('location:http://adlister.dev/user/login');
+            die;
+        }
+    }
+
 }
