@@ -1,37 +1,28 @@
-<?php  
-    function pageController($dbc)
-    {
+<div>
+    <h1 class="center-align">Items Page</h1>
+</div>
 
-        return array('ads' => $ads);
-    }
-    extract(pageController());
-?>
-
-    <div>
-        <h1 class="center-align">Items Page</h1>
-    </div>
-
-    <section id="items">
-        <?php foreach ($ads as $index=>$ad): ?>
-            <?php if ($index % 4 == 0): ?>
-                <div class="row">
-            <?php endif ?>    
-                    <div class="col s12 m3">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="<?= $ad['image']; ?>" >
-                                <span class="card-title">Item <?= $ad['name']; ?></span>
-                            </div>
-                            <div class="card-content">
-                                <p><?= $ad['description']; ?></p>
-                            </div>
-                            <div class="card-action">
-                                <a href=""><button class="btn">Details Page</button></a>
-                            </div>
+<section id="items">
+    <?php foreach ($ads as $index=>$ad): ?>
+        <?php if ($index % 4 == 0): ?>
+            <div class="row">
+        <?php endif ?>    
+                <div class="col s12 m3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="<?= $ad['img_url']; ?>" >
+                            <span class="card-title">Item <?= $ad['name']; ?></span>
+                        </div>
+                        <div class="card-content">
+                            <p><?= $ad['description']; ?></p>
+                        </div>
+                        <div class="card-action">
+                            <a href=""><button class="btn">Details Page</button></a>
                         </div>
                     </div>
-            <?php if ($index % 4 == 3): ?>
                 </div>
-            <?php endif ?>    
-        <?php endforeach; ?>
-    </section>
+        <?php if ($index % 4 == 3): ?>
+            </div>
+        <?php endif ?>    
+    <?php endforeach; ?>
+</section>
