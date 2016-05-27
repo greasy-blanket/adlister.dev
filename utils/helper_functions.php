@@ -72,8 +72,18 @@ $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jan
 // This shows all items from the database in the index.php file
 function fetchAllItems()
 {
-    //
+    self::dbConnect();
 
+    $allData = self::$dbc->prepare('SELECT * FROM users');
+    $result = $allData->execute();
+    $result = $allData->fetchAll(PDO::FETCH_ASSOC);
+
+    $instance = null;
+    if ($result) {
+        $instance = new static($result);
+    }
+    return $instance;
+}
 
 function createNewUser()
 {
