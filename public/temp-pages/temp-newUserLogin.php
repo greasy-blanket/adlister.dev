@@ -10,7 +10,6 @@ $errors = [];
 echo 'first one';
 var_dump($_POST);
     if (Input::has('name') && Input::has('username')&& Input::has('password') && Input::has('confirmPassword') && Input::has('email')) {
-        // $user = $dbc->prepare('INSERT INTO users (name, username, password, email) VALUES (:name, :username, :password, :email)');
         $user = new User;
         try{
             $user->name = Input::get('name');
