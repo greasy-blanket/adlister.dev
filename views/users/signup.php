@@ -1,15 +1,6 @@
-<html>
-<head>
-<?php require 'temp-head.php'; ?>
-
-
-    <title>Create New User</title>
-</head>
-<body>
-<?php require "temp-navbar.php"; ?>
-
-<center>Creating A New User</center>    
 <div class="container">
+	<center>Creating A New User</center> 
+
 	<section id="login">
 		<div class="row">
 		    <div class="col s12 m6 l4 offset-m3 offset-l4">
@@ -65,10 +56,3 @@
 		</div>
 	</section>
 </div>
-
-<?php require 'temp-foot.php'; ?>
-</body>
-</html>
-
-
-
