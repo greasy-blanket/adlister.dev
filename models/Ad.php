@@ -14,7 +14,7 @@ class Ad extends Model
         $stmt->bindValue('user_id', $user_id, PDO::PARAM_INT);
         $stmt->execute();
 
-        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $results;
     }

@@ -1,14 +1,18 @@
+<?php
+    $userinfo = Auth::user();
+    $ads = Ad::findAdsByUserID($userinfo->id);
+?>
 <div class="container">
     <div class="user-info section center-align">
         <h2>User Info</h2>
 
         <div class="info left-align">
             <div class="name">
-                <p>Name: <?= $userinfo['name'] ?></p>
+                <p>Name: <?= $userinfo->name ?></p>
             </div>
 
             <div class="email">
-                <p>Email: <?= $userinfo['email'] ?></p>
+                <p>Email: <?= $userinfo->email ?></p>
             </div>
         </div>
         <button class="edit-profile btn">Edit Profile</button>
@@ -18,10 +22,10 @@
         <h2>Your Ads</h2>
 
         <div class="info">
-            <?php foreach($ads as $adTitle): ?>
+            <?php foreach($ads as $ad): ?>
 
                 <div class="ad-title">
-                    <p><?= $adTitle ?></p>
+                    <p><?= $ad['name'] ?></p>
                 </div>
 
             <?php endforeach; ?>
