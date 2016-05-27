@@ -30,7 +30,9 @@
 
             <?php endforeach; ?>
         </div>
-        <button class="create-ad btn">Create Ad</button>
+        <a href= "http://adlister.dev/ads/create" class="create-ad btn">Create Ad</a>
+        <a href= "????" class="edit-ad btn">Edit Your Ads</a>
+
     </div><!-- End of user-ads -->
 </div><!-- End of container -->
 
