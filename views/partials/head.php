@@ -10,6 +10,8 @@
 <!-- any foreign fonts -->
 
 <!-- any foreign icons / logos -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 <!-- any require / include that needs to be on all pages here -->
 
