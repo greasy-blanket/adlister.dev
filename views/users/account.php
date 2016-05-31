@@ -2,11 +2,11 @@
     $userinfo = Auth::user();
     $ads = Ad::findAdsByUserID($userinfo->id);
 ?>
-<div class="container">
+<div class="section">
     <div class="user-info section center-align">
         <h2>User Info</h2>
 
-        <div class="info left-align">
+        <div class="info left-align card" id="infocard">
             <div class="name">
                 <p>Name: <?= $userinfo->name ?></p>
             </div>
@@ -21,7 +21,7 @@
         <a class="edit-profile btn" href="http://adlister.dev/user/edit">Edit Profile</a>
     </div><!-- End of user-info -->
 
-    <div class="user-ads section center-align">
+    <div class="user-ads section center-align" id="userads">
         <h2>Your Ads</h2>
 
         <div class="info">

@@ -42,7 +42,6 @@ function pageController()
         case ('/user/edit'):
             $data['title'] = 'Edit Account';
             $main_view = '../views/users/edit.php';
-
             $data['user'] = getUserInfo();
 
             break;

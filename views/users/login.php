@@ -1,5 +1,5 @@
-<div class="container">
-    <h1 class="section-title">Login To adLister</h1>
+<div class="section">
+    <h1 class="section-title center-align">Login To adLister</h1>
     <?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
         <div class="alert alert-danger">
             <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
@@ -29,9 +29,8 @@
               </div>
               <div class="row">
                 <div class="col s12 m8 l4 offset-m2 offset-l4">
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                  <button class="btn waves-effect waves-light" type="submit" name="action">SingUp!</button>
     <!-- link needs to be added here to create user signup page -->
-                  <a href="/signup" class="btn btn-success">Go To Signup</a>
                 </div>
               </div>
             </form>

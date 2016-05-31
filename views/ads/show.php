@@ -1,14 +1,14 @@
-<?php  
+<?php
     $item = Ad::showAd(Input::get('user_id'), Input::get('id'));
 
 ?>
-<div class="container">
+<div class="">
     <div>
         <h1 class="center-align"><?= $item['ad_name'];?></h1>
     </div>
-    <div class="container">
+    <div class="">
         <div class="row">
-            <div class="col s12 m9">
+            <div class="col s12 m8">
                 <img class="responsive-img" src="<?= $item['img_url']?>" >
                 <h3>Item Number: <?= $item['id']?></h3>
                 <a href="">Posted by <?= $item['name'] ?></a>
@@ -27,13 +27,15 @@
                     </tr>
                 </table>
             </div>
+
             <div class="col s12 m8">
                 <button class="btn"><a href="">Edit Ad</a></button>
                 <button class="btn"><a href="/ads/delete?user_id=<?= $item['user_id']?>&id=<?= $item['id']?>">Delete ad</a></button>
             </div>
-        </div>
-    </div> 
-</div>
-    
 
-    
+        </div>
+    </div>
+</div>
+
+
+

@@ -10,9 +10,11 @@ require_once __DIR__ . '/../bootstrap.php';
 </head>
 <body>
     <?php require '../views/partials/navbar.php'; ?>
+    <div class="container">
 
-    <?php require $main_view; ?>
+        <?php require $main_view; ?>
 
-    <?php require '../views/partials/common_js.php'; ?>
+        <?php require '../views/partials/common_js.php'; ?>
+    </div>
 </body>
 </html>

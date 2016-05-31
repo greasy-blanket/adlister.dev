@@ -1,5 +1,5 @@
-<div class="container">
-  <center>Creating A New User</center>
+<div class="form">
+  <h2 class="section-title center-align">Creating A New User</h2>
 
   <section id="login">
     <div class="row">
@@ -49,7 +49,7 @@
               </div>
               <div class="row">
                 <div class="col s12 m8 l4 offset-m2 offset-l4">
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                  <button class="btn" type="submit" name="action">Submit</button>
                 </div>
               </div>
             </form>

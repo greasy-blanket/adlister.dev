@@ -5,10 +5,13 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <!-- include css here -->
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
 
 <!-- any foreign fonts -->
 
 <!-- any foreign icons / logos -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 <!-- any require / include that needs to be on all pages here -->
 

@@ -150,7 +150,6 @@ function updateAd()
 function getUserInfo()
 {
     $userObject = Auth::user();
-    var_dump($userObject);
     $user = ['name' => $userObject->name, 'email' => $userObject->email, 'username' => $userObject->username,];
 
     //on submit save and take backto the user account page

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
   <section id="login">
     <div class="row">
       <h1 class="section-title">Edit Account</h1>
