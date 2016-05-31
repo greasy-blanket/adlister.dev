@@ -21,20 +21,24 @@ p {
   max-height: 100px;
 }
 
+.card-action button {
+  background-color: #3399FF !important;
+}
+
 .navbar {
   background-color: #3399FF;
   box-shadow: 0px 2px 2px #777777;
 }
 
 .jumbotron {
-    height: 300px;
-    width: 300px;
+  height: 300px;
+  width: 300px;
 }
 .container {
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0px 5px 5px #888888;
-    width: 90% !important;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0px 5px 5px #888888;
+  width: 90% !important;
 }
 
 .button {
