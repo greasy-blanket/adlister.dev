@@ -23,7 +23,7 @@ function saveUploadedImage($input_name)
                 $valid = false;
             }
             // only allows certain file extensions
-            
+
             if( $extension != 'jpg' && $extension != 'jpeg' && $extension != 'png' && $extension != 'gif')
             {
                 $valid  = false;
@@ -85,8 +85,8 @@ function fetchAllItems()
 
 function userLogout()
 {
-    if(logInUser()) {
         Auth::logout();
+    if(logInUser()) {
     }
 }
 
