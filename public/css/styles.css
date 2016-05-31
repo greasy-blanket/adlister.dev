@@ -11,6 +11,7 @@ p {
   margin: 20px auto;
   border: 1px solid #888888;
   width: 750px;
+  padding: 20px;
 }
 
 .card-content p{
@@ -41,8 +42,24 @@ p {
   width: 90% !important;
 }
 
-.button {
+button, .btn{
   background-color: #3399FF !important;
+}
+
+#infocard {
+  width: 300px;
+  margin: 0px auto;
+}
+
+#infocard p {
+  padding: 10px;
+
+}
+
+#userads {
+  width: 400px;
+  margin: 0px auto;
+  box-shadow: 0px 2px 10px #bbbbbb;
 }
 
 
