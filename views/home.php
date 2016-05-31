@@ -18,7 +18,7 @@
             <h3 class="section-title">Featured Items</h3>
             <?php foreach ($ads as $index => $ad): ?>
             <div class="items col s12 m4">
-                <div class="card">
+                <div class="card medium">
                     <div class="card-image">
                         <img src="<?= $ad['img_url']; ?>">
                         <span class="card-title"><?= $ad['name'] ?></span>

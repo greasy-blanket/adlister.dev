@@ -13,7 +13,7 @@
                 <div class="row">
             <?php endif ?>
                     <div class="col s12 m3">
-                        <div class="card">
+                        <div class="card medium">
                             <div class="card-image">
                                 <img src="<?= $ad['img_url']; ?>" >
                                 <span class="card-title">Item <?= $ad['name'] ?></span>

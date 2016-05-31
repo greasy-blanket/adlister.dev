@@ -13,6 +13,14 @@ p {
   width: 750px;
 }
 
+.card-content p{
+  font-size: .8rem;
+}
+
+.card-content img {
+  max-height: 100px;
+}
+
 .navbar {
   background-color: #3399FF;
   box-shadow: 0px 2px 2px #777777;
@@ -27,6 +35,10 @@ p {
     padding: 20px;
     box-shadow: 0px 5px 5px #888888;
     width: 90% !important;
+}
+
+.button {
+  background-color: #3399FF !important;
 }
 
 
