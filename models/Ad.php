@@ -31,4 +31,18 @@ class Ad extends Model
 
         return $results;
     }
+
+    public static function showAd($user_id, $ad_id)
+    {
+        self::dbConnect();
+        $query = 'SELECT * FROM ads JOIN users ON users.id = ads.user_id WHERE users.id = :user_id AND ads.id = :id';
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue('user_id', $user_id, PDO::PARAM_INT);
+        $stmt->bindValue('id', $ad_id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
 }

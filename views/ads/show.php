@@ -1,13 +1,19 @@
+<?php  
+    // $items = Ad::findAdsbyUserID(Input::get('user_id'));
+    $item = Ad::showAd(Input::get('user_id'), Input::get('id'));
+
+    var_dump($item);
+?>
 <div class="container">
     <div>
-        <h1 class="center-align"><?= $item['title'];?></h1>
+        <h1 class="center-align"><?= $item['name'];?></h1>
     </div>
     <div class="container">
         <div class="row">
             <div class="col s12 m9">
-                <img class="responsive-img" src="<?= $item['img']?>" >
+                <img class="responsive-img" src="<?= $item['img_url']?>" >
                 <h3>Item Number: <?= $item['id']?></h3>
-                <a href="">Posted by <?= $item['owner'] ?></a>
+                <a href="">Posted by <?= $item['name'] ?></a>
                 <p class="flow-text"><?= $item['description'] ?></p>
             </div>
 
@@ -19,7 +25,7 @@
                     </tr>
                     <tr>
                         <td><?= $item['price']?></td>
-                        <td><?= $item['owner']?><br><?= $item['address']?><br><?= $item['email']?></td>
+                        <td><?= $item['name']?><br><?= $item['email']?></td>
                     </tr>
                 </table>
             </div>
@@ -28,7 +34,7 @@
                 <button class="btn"><a href="">Delete ad</a></button>
             </div>
         </div>
-    </div>   
+    </div> 
 </div>
     
 
