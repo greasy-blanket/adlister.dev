@@ -77,8 +77,7 @@ function pageController()
         case '/ads/edit':
             $data['title'] = 'Adlist Edit';
             $main_view = '../views/ads/edit.php';
-            //$data['ads'] = getAllAdsHelperFunctionVerboseName();
-            //$data['somethingelse'] = myOtherSuperLongHelperFunctionName();
+            updateAd();
             break;
 
         case '/ads/show':
