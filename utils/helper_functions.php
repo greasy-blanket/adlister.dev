@@ -23,7 +23,7 @@ function saveUploadedImage($input_name)
                 $valid = false;
             }
             // only allows certain file extensions
-            
+
             if( $extension != 'jpg' && $extension != 'jpeg' && $extension != 'png' && $extension != 'gif')
             {
                 $valid  = false;
@@ -60,6 +60,7 @@ function logInUser()
 
 function userLogout()
 {
+
     if(Auth::check()) {
         Auth::logout();
 // tried putting this redirect in so that you can tell you actually logged out
@@ -126,5 +127,54 @@ function createNewAd()
         $ad->img_url = saveUploadedImage('img');
         $ad->save();
     }
+}
+
+function getUserInfo()
+{
+    $userObject = Auth::user();
+    var_dump($userObject);
+    $user = ['name' => $userObject->name, 'email' => $userObject->email, 'username' => $userObject->username,];
+
+    //on submit save and take backto the user account page
+    $errors = [];
+
+($_POST && !Input::has('name')) ? array_push($errors, 'Name empty') : null;
+
+    if (Input::has('name') && Input::has('username') && Input::has('email')) {
+        try{
+            $userObject->name = Input::get('name');
+        }catch(Exception $e){
+            $errors[] = $e->getMessage();
+        }
+
+        try{
+             $userObject->username = Input::get('username');
+        }catch(Exception $e){
+            $errors[] = $e->getMessage();
+        }
+        // if ($userObject->confirmPassword !== $userObject->password) {
+        //   $errors[] = 'Your password and password confirmation do not match, try again';
+        // } else {
+        //   try{
+        //       $userObject->password = Input::get('password');
+        //   }catch(Exception $e){
+        //       $errors[] = $e->getMessage();
+        //   }
+        // }
+
+        try{
+            $userObject->email = Input::get('email');
+        }catch(Exception $e){
+            $errors[] = $e->getMessage();
+        }
+
+        if(empty($errors)) {
+            $userObject->save();
+            header('location:http://adlister.dev/user/account');
+            die;
+        }
+    }
+
+    return $user;
 }
 
