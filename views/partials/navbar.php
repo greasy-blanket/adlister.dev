@@ -1,6 +1,6 @@
 <!-- materialize nav bar.  logo on the left buttons on the right -->
 <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper navbar">
     <!--logo picture-->
         <a class="brand-logo"><img src="/img/adlister-logo-small.png"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">

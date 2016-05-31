@@ -2,7 +2,7 @@
     $userinfo = Auth::user();
     $ads = Ad::findAdsByUserID($userinfo->id);
 ?>
-<div class="container">
+<div class="section">
     <div class="user-info section center-align">
         <h2>User Info</h2>
 
