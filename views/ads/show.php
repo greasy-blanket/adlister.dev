@@ -28,6 +28,11 @@
                 </table>
             </div>
 
+            <div class="col s12 m8">
+                <button class="btn"><a href="">Edit Ad</a></button>
+                <button class="btn"><a href="/ads/delete?user_id=<?= $item['user_id']?>&id=<?= $item['id']?>">Delete ad</a></button>
+            </div>
+
         </div>
     </div>
 </div>
