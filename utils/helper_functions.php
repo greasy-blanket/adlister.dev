@@ -63,9 +63,6 @@ function userLogout()
 
     if(Auth::check()) {
         Auth::logout();
-// tried putting this redirect in so that you can tell you actually logged out
-// but never get redirected which proves user is never logging out.
-// function is being called in the page controller...
         header('Location: http://adlister.dev');
 
     }
@@ -129,6 +126,27 @@ function createNewAd()
     }
 }
 
+function updateAd()
+{
+    $id = Input::get('id');
+    $ad = Ad::find($id);
+
+    if (Input::has('name')) {
+        $ad->name = Input::get('name');
+        $ad->description = Input::get('description');
+        $ad->price = Input::get('price');
+        
+        if(saveUploadedImage("img")== null){
+        
+        }else{
+            $ad->img_url = saveUploadedImage('img');
+        }
+        $ad->save();
+        header('location:http://adlister.dev/user/account');
+        die;
+    }
+}
+
 function getUserInfo()
 {
     $userObject = Auth::user();
@@ -177,4 +195,3 @@ function getUserInfo()
 
     return $user;
 }
-
