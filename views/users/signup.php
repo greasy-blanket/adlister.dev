@@ -1,5 +1,5 @@
-<div class="container">
-  <center>Creating A New User</center>
+<div class="form">
+  <h2 class="section-title center-align">Creating A New User</h2>
 
   <section id="login">
     <div class="row">
