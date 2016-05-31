@@ -58,46 +58,17 @@ function logInUser()
     }
 }
 
-
-// From Kristen: logic from /views/ads/show.php
-// $item = ['title' => 'Jet', 'owner' => 'Sally', 'description' => 'lorem ipsum delor and other really neat things.', 'email' => 'sally89@gmail.com', 'address' => '1324 S. Lorem, San Antonio, Texas, 77777'];
-    // return $item;
-
-// From Kristen: logic from /views/users/account.php
-// $data = [];
-//     $ads = [];
-
-//     $data['name'] = 'Jane';
-//     $data['email'] = 'jane1981@hotmail.com';
-
-//     $ads = ['Sony Playstation', 'Cat With Laser Eyes', 'Charlie Brown Shirt'];
-
-// From Kristen: logic from /views/users/edit.php
-$user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
-    return $user;
-
-
-// This shows all items from the database in the index.php file
-function fetchAllItems()
-{
-    //
-}
-
 function userLogout()
 {
-    if(logInUser()) {
+    if(Auth::check()) {
         Auth::logout();
+// tried putting this redirect in so that you can tell you actually logged out
+// but never get redirected which proves user is never logging out.
+// function is being called in the page controller...
+        header('Location: http://adlister.dev');
+
     }
 }
-
-//     return [
-//         'data' => $data,
-//         'ads'  => $ads,
-//         ];
-
-// // From Kristen: logic from /views/users/edit.php
-// $user = ['name' => 'Jane', 'email' => 'jane1981@hotmail.com', 'username' => 'jane1981',];
-//     return $user;
 
 function createNewUser()
 {
