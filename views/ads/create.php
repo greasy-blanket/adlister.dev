@@ -24,7 +24,6 @@
                 <div class="row">
                     <div class="input-field col s12">
                           <input id="img" name="img" type="file" class=""></input>
-                          <label for="img">Image Url</label>
                     </div>
                 </div>
             </div>
