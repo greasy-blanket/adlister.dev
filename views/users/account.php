@@ -11,11 +11,14 @@
                 <p>Name: <?= $userinfo->name ?></p>
             </div>
 
+            <div class="username">
+                <p>User Name: <?= $userinfo->username ?></p>
+            </div>
             <div class="email">
                 <p>Email: <?= $userinfo->email ?></p>
             </div>
         </div>
-        <button class="edit-profile btn">Edit Profile</button>
+        <a class="edit-profile btn" href="http://adlister.dev/user/edit">Edit Profile</a>
     </div><!-- End of user-info -->
 
     <div class="user-ads section center-align">
