@@ -1,12 +1,10 @@
 <?php  
-    // $items = Ad::findAdsbyUserID(Input::get('user_id'));
     $item = Ad::showAd(Input::get('user_id'), Input::get('id'));
 
-    var_dump($item);
 ?>
 <div class="container">
     <div>
-        <h1 class="center-align"><?= $item['name'];?></h1>
+        <h1 class="center-align"><?= $item['ad_name'];?></h1>
     </div>
     <div class="container">
         <div class="row">

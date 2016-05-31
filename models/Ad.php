@@ -35,7 +35,7 @@ class Ad extends Model
     public static function showAd($user_id, $ad_id)
     {
         self::dbConnect();
-        $query = 'SELECT * FROM ads JOIN users ON users.id = ads.user_id WHERE users.id = :user_id AND ads.id = :id';
+        $query = 'SELECT ads.name AS ad_name, users.name, ads.id, ads.user_id, ads.description, ads.price, ads.img_url, users.email, users.username, users.password FROM ads JOIN users ON users.id = ads.user_id WHERE users.id = :user_id AND ads.id = :id';
         $stmt = self::$dbc->prepare($query);
         $stmt->bindValue('user_id', $user_id, PDO::PARAM_INT);
         $stmt->bindValue('id', $ad_id, PDO::PARAM_INT);
