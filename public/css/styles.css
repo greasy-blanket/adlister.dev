@@ -1,0 +1,12 @@
+
+
+
+.jumbotron {
+    height: 300px;
+    width: 300px;
+}
+.container {
+        background-color: #eeeeee;
+        margin-top: 40px;
+        padding: 20px;
+    }
