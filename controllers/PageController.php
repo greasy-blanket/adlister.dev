@@ -40,8 +40,11 @@ function pageController()
             break;
 
         case ('/user/edit'):
-            $data['title'] = 'Adlist Edit';
+            $data['title'] = 'Edit Account';
             $main_view = '../views/users/edit.php';
+
+            $data['user'] = getUserInfo();
+
             break;
 
         case ('/user/login'):
@@ -73,7 +76,7 @@ function pageController()
             $main_view = '../views/ads/create.php';
             createNewAd();
             break;
-            
+
         case '/ads/edit':
             $data['title'] = 'Adlist Edit';
             $main_view = '../views/ads/edit.php';

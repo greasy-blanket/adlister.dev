@@ -22,7 +22,7 @@
                                 <p><?= $ad['description']; ?></p>
                             </div>
                             <div class="card-action">
-                                <a href=""><button class="btn">Details Page</button></a>
+                                <a href="/ads/show?user_id=<?= $ad['user_id']?>&id=<?= $ad['id']?>"><button class="btn">Details Page</button></a>
                             </div>
                         </div>
                     </div>
