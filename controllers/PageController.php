@@ -84,9 +84,14 @@ function pageController()
             break;
 
         case '/ads/show':
-                    $data['title'] = 'Adlist | Info';
+            $data['title'] = 'Adlist | Info';
             $main_view = '../views/ads/show.php';
 
+            break;
+
+        case '/ads/delete':
+            $data['title'] = 'Adlist | Delete Ad';
+            $main_view = '../views/ads/delete.php';
             break;
 
         default:

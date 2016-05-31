@@ -45,4 +45,14 @@ class Ad extends Model
 
         return $result;
     }
+
+    public static function deleteAd($user_id, $id)
+    {
+        self::dbConnect();
+        $deleteData = self::$dbc->prepare('DELETE FROM ads WHERE id = ? AND user_id = ?');
+        $deleteData->bindValue('user_id', $user_id, PDO::PARAM_INT);
+        $deleteData->bindValue('id', $id, PDO::PARAM_INT);
+        $deleteData->execute([$user_id, $id]);
+        
+    }
 }
